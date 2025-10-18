@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  runic-cms:
+    build:
+      context: ..
+      dockerfile: docker-aio/Dockerfile
+    container_name: runic-cms-aio
+    ports:
+      - "3000:3000"  # Frontend
+      - "3001:3001"  # Backend API
+      - "5432:5432"  # PostgreSQL (optional external access)
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=localhost
+      - DB_PORT=5432
+      - DB_NAME=runic_cms
+      - DB_USER=runic
+      - DB_PASSWORD=${DB_PASSWORD:-runic_password}
+      - JWT_SECRET=${JWT_SECRET:-change-this-secret-key}
+      - FRONTEND_URL=http://localhost:3000
+      - NEXT_PUBLIC_API_URL=http://localhost:3001
+    volumes:
+      - runic-data:/var/lib/postgresql/data
+      - runic-uploads:/app/uploads
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  runic-data:
+    driver: local
+  runic-uploads:
+    driver: local

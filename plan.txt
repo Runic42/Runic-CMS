@@ -1,0 +1,40 @@
+This is a template for hosting a own blog, kinda like WordPress but you host your own instace, either thru Vercel with a seperate backend like supabase or thru the dockercontainer, that has everything build in.
+This should be a little bit like nextcloud.
+
+--
+Frontend:
+
+The site normal users see that can be customised ba the admin,
+The Admin can completly change the layout with drag and drop (Would need to do it for every deice type (Desktop, Tablet, Phone)
+Or Responsive Layout, he can add the objects, that auto fit to the different screens, these could be for exaple a gallery text on the left pics on the right (Or the other way) it is resposife to how much text and how many pictures (the Admin can also decide, How its displayed on tablet/mobile)
+everything should be customisable
+
+Object should include but are not limited to:
+Gallery
+Video
+Text
+Embedd (like iframes)
+YT-Embedd
+
+Also it should be possible to make a site in HTML, so that its just eazier to host the site, and make i easier to use databases
+--
+
+Backend:
+
+Postgres based backend, nothing special
+--
+Backend (Guid)
+
+How to setup Supabase as Backend
+--
+Docker aio
+
+Dockercontainer that includes Front and backend, so that backend request dont need to travel thru the internet, but front and backend are directly connected
+--
+Marketplace
+
+Hosted by Me
+
+anyone can make additions Like new elements, implementations for other services, Designs, Templates etc.
+with Moderation system
+--
