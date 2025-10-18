@@ -1,3 +1,7 @@
+# IF YOU COME ACROSS THIS DONT TRY TO RUN THIS, THIS IS UNFINISHED
+
+____________________
+
 # 🏰 Runic CMS
 
 A self-hosted, customizable Content Management System similar to WordPress, but with modern drag-and-drop page building and flexible deployment options.
