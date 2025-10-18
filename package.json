@@ -1,0 +1,50 @@
+{
+  "name": "runic-cms",
+  "version": "1.0.0",
+  "description": "Self-hosted, customizable Content Management System",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "clean": "rm -rf frontend/.next frontend/node_modules backend/dist backend/node_modules node_modules",
+    "docker:build": "cd docker-aio && docker-compose build",
+    "docker:up": "cd docker-aio && docker-compose up -d",
+    "docker:down": "cd docker-aio && docker-compose down",
+    "docker:logs": "cd docker-aio && docker-compose logs -f",
+    "verify": "./verify-setup.sh",
+    "lint": "cd frontend && npm run lint && cd ../backend && npm run lint"
+  },
+  "keywords": [
+    "cms",
+    "content-management",
+    "nextjs",
+    "react",
+    "postgresql",
+    "self-hosted"
+  ],
+  "author": "Runic CMS Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/runic-cms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/runic-cms/issues"
+  },
+  "homepage": "https://github.com/yourusername/runic-cms#readme"
+}
