@@ -34,7 +34,7 @@ export default function RichTextEditor({ value, onChange, placeholder }: RichTex
     setTimeout(() => setShowToolbar(false), 200)
   }
 
-  const toolbarButtons = [
+  const toolbarButtons: Array<{ divider?: boolean; command?: string; value?: string; icon?: string; title?: string }> = [
     { command: 'bold', icon: 'B', title: 'Bold' },
     { command: 'italic', icon: 'I', title: 'Italic' },
     { command: 'underline', icon: 'U', title: 'Underline' },
@@ -83,7 +83,7 @@ export default function RichTextEditor({ value, onChange, placeholder }: RichTex
                   e.preventDefault()
                   if (btn.command === 'createLink') {
                     handleLinkInsert()
-                  } else {
+                  } else if (btn.command) {
                     execCommand(btn.command, btn.value)
                   }
                 }}
