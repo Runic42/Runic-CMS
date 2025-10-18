@@ -81,9 +81,9 @@ export default function PageEditor({ initialContent, onSave, devicePreview }: Pa
   }
 
   const updateContentObject = (id: string, updates: Partial<ContentObject>) => {
-    setContent(
-      content.map((obj) =>
-        obj.id === id ? { ...obj, ...updates } : obj
+    setContent((prevContent) =>
+      prevContent.map((obj) =>
+        obj.id === id ? { ...obj, ...updates } as ContentObject : obj
       )
     )
   }
